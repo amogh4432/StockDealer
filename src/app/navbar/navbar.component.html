@@ -1,0 +1,26 @@
+<nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="isLoggedOut()">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active" *ngIf="isLoggedOut()">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/stocks" routerLinkActive="active">Stocks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/transaction" routerLinkActive="active">Transaction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="logout()" *ngIf="isLoggedIn()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  

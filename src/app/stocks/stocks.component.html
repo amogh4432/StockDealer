@@ -1,0 +1,30 @@
+<div class="main">
+    <form >
+    <div class="search-container">
+        <!-- <input [(ngModel)]="stocklist.stockName" name="abc" type="text" class="search-box" placeholder="Search..."> -->
+        <app-individual-stocks></app-individual-stocks>
+        <!-- <a routerLink="/individual-stocks" routerLinkActive="active"><button  type="submit" class="search-button">Search</button></a> -->
+    </div>
+    </form>
+    <div><h1>{{stocklist.stockName}}</h1></div>
+<table class="stock-table">
+    
+    <thead>
+        <tr>
+            <th>Stock Id</th>
+            <th>Company</th>
+            <th>Current Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of stocks;" class="new" >
+        
+            <td>{{s.id}}</td>
+            <td>{{s.stockName}}</td>
+            <td>₹{{s.stockPrice}}</td>
+            <td><button class="details-btn-buy" (click)="buyStock(s)">Buy</button><button class="details-btn-sell" (click)="sellStock(s)">Sell</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>

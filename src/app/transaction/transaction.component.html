@@ -1,0 +1,55 @@
+<div class="main">
+<table class="stock-table">
+    
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Stock Id</th>
+            <th>Order Type</th>
+            <th>Quantity</th>
+            <th>StockPrice</th>
+            <th>TimeStamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of transaction;" class="new" >
+        
+            <td>{{s.userId}}</td>
+            <td>{{s.stockId}}</td>
+            <td>{{s.orderType}}</td>
+            <td>{{s.quantity}}</td>
+            <td>{{s.stockPrice}}</td>
+            <td>{{s.timestamp}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<br><br><br>
+<h2>Sell Transactions</h2>
+<table class="stock-table">
+    
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Stock Id</th>
+            <th>Order Type</th>
+            <th>Quantity</th>
+            <th>StockPrice</th>
+            <th>TimeStamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of sellrepo;" class="new" >
+        
+            <td>{{s.userId}}</td>
+            <td>{{s.stockId}}</td>
+            <td>{{s.orderType}}</td>
+            <td>{{s.quantity}}</td>
+            <td>{{s.stockPrice}}</td>
+            <td>{{s.timestamp}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+</div>

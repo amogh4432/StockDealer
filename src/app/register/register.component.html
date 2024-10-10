@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h1>Register</h1>
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <div class="input-box" [ngClass]="{ 'error': name.invalid && (name.dirty || name.touched) }">
+      <input type="text" id="name" name="name" [(ngModel)]="registerData.name" #name="ngModel" placeholder="Name" required>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+        Name is required.
+      </div>
+    </div>
+    <div class="input-box" [ngClass]="{ 'error': username.invalid && (username.dirty || username.touched) }">
+      <input type="text" id="username" name="username" [(ngModel)]="registerData.username" #username="ngModel" placeholder="Username" required>
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error-message">
+        Username is required.
+      </div>
+    </div>
+    <div class="input-box" [ngClass]="{ 'error': password.invalid && (password.dirty || password.touched) }">
+      <input type="password" id="password" name="password" [(ngModel)]="registerData.password" #password="ngModel" placeholder="Password" required>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+        Password is required.
+      </div>
+    </div>
+    <a href="/login"> <button type="submit" class="btn" [disabled]="registerForm.invalid">Register</button></a>
+  </form>
+  <div class="register-link">
+    <p>Already have an account? <a href="/login">Login here</a></p>
+  </div>
+</div>
